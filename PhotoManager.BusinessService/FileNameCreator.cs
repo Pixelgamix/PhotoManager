@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using PhotoManager.Contracts.Database;
 using PhotoManager.Contracts.Entities;
+using PhotoManager.Contracts.Logic;
 
 namespace PhotoManager.BusinessService
 {
-    public class FileNameCreator
+    public class FileNameCreator : IFileNameCreator
     {
         #region Private member
 
@@ -26,13 +27,8 @@ namespace PhotoManager.BusinessService
         
         #endregion
 
-        private static string[] GetCreationFormat(FileNameSettings fileNameSettings)
-        {
-            if (fileNameSettings.SeparateYearMonthDay) return null;
-            
-            return !fileNameSettings.SeparateTimeFromDate ? CreationFormatWithTime : CreationFormatWithoutTime;
-        }
-        
+        #region Public methods
+
         public string CreateFileName(FileNameSettings fileNameSettings, Photo photo)
         {
             var creationFormats = GetCreationFormat(fileNameSettings);
@@ -58,6 +54,10 @@ namespace PhotoManager.BusinessService
             return fileName;
         }
 
+        #endregion
+
+        #region Private methods
+
         private static string GetSeparator(string orgSeparator, string[] creationFormats, string fileNamePart, 
             IList<string> orderedFileNameParts, bool firstElementEmpty)
         {
@@ -76,5 +76,14 @@ namespace PhotoManager.BusinessService
             
             return orgSeparator;
         }
+        
+        private static string[] GetCreationFormat(FileNameSettings fileNameSettings)
+        {
+            if (fileNameSettings.SeparateYearMonthDay) return null;
+            
+            return !fileNameSettings.SeparateTimeFromDate ? CreationFormatWithTime : CreationFormatWithoutTime;
+        }
+
+        #endregion
     }
 }
