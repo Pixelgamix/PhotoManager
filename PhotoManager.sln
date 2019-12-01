@@ -1,8 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.Contracts", "PhotoManager.Contracts\PhotoManager.Contracts.csproj", "{E1D2CD1B-B874-42D1-B49B-FFB151243493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.DataAccess", "PhotoManager.DataAccess\PhotoManager.DataAccess.csproj", "{04D647CB-2363-423C-939C-2727C5188DFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.BusinessService", "PhotoManager.BusinessService\PhotoManager.BusinessService.csproj", "{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04D647CB-2363-423C-939C-2727C5188DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D647CB-2363-423C-939C-2727C5188DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D647CB-2363-423C-939C-2727C5188DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D647CB-2363-423C-939C-2727C5188DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
