@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="4.9.4" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PhotoManager.BusinessService\PhotoManager.BusinessService.csproj" />
+      <ProjectReference Include="..\PhotoManager.Contracts\PhotoManager.Contracts.csproj" />
+      <ProjectReference Include="..\PhotoManager.DataAccess\PhotoManager.DataAccess.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="2019314_050443_IMG_050443119.jpg" />
+    </ItemGroup>
+
+</Project>

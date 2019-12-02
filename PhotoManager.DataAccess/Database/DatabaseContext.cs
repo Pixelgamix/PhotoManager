@@ -8,7 +8,7 @@ namespace PhotoManager.DataAccess.Database
     {
         private readonly IRepositoryContext _repositoryContext;
 
-        public DatabaseContext(IRepositoryContext repositoryContext)
+        public DatabaseContext(RepositoryContext repositoryContext)
         {
             _repositoryContext = repositoryContext ?? throw new ArgumentNullException(nameof(repositoryContext));
         }

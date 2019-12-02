@@ -9,6 +9,10 @@ namespace PhotoManager.BusinessService
         {
             builder.RegisterType<FileNameCreator>()
                 .As<IFileNameCreator>();
+            
+            builder.RegisterType<PhotoConverter>()
+                .As<IPhotoConverter>();
+            
         }
     }
 }

@@ -5,7 +5,7 @@ namespace PhotoManager.DataAccess.Database
 {
     public class RepositoryContext : IRepositoryContext
     {
-        public RepositoryContext(IPhotoRepository photoRepository)
+        public RepositoryContext(PhotoRepository photoRepository)
         {
             PhotoRepository = photoRepository ?? throw new ArgumentNullException(nameof(photoRepository));
         }

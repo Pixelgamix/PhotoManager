@@ -33,6 +33,9 @@ namespace PhotoManager.BusinessService
         {
             var creationFormats = GetCreationFormat(fileNameSettings);
 
+            var fileType = GetFileType(photo.FileName);
+            var orgFileName = GetFileName(photo.FileName);
+            
             var fileName = string.Empty;
             foreach (var fileNamePart in fileNameSettings.FileNameOrder)
             {
@@ -41,23 +44,46 @@ namespace PhotoManager.BusinessService
 
                 fileName = fileNamePart switch
                 {
-                    FileNameFormat.Year => string.Concat(fileName, separator, photo.CreationTimestamp.Year),
-                    FileNameFormat.Month => string.Concat(fileName, separator, photo.CreationTimestamp.Month),
-                    FileNameFormat.Day => string.Concat(fileName, separator, photo.CreationTimestamp.Day),
-                    FileNameFormat.Time => string.Concat(fileName, separator, photo.CreationTimestamp.ToString("hhmmss")),
-                    FileNameFormat.OriginFileName => string.Concat(fileName, separator, photo.FileName),
-                    FileNameFormat.UploadDate => string.Concat(fileName, separator, DateTime.Now.ToString("yyyyMMdd")),
+                    FileNameFormat.Year => string.Concat(fileName, separator, 
+                        GetNextFileNamePartNumber(photo.CreationTimestamp.Year, 4)),
+                    FileNameFormat.Month => string.Concat(fileName, separator, 
+                        GetNextFileNamePartNumber(photo.CreationTimestamp.Month, 2)),
+                    FileNameFormat.Day => string.Concat(fileName, separator, 
+                        GetNextFileNamePartNumber(photo.CreationTimestamp.Day, 2)),
+                    FileNameFormat.Time => string.Concat(fileName, separator, 
+                        photo.CreationTimestamp.ToString("HHmmss")),
+                    FileNameFormat.OriginFileName => string.Concat(fileName, separator, 
+                        orgFileName),
+                    FileNameFormat.UploadDate => string.Concat(fileName, separator, 
+                        DateTime.Now.ToString("yyyyMMdd")),
                     _ => fileName
                 };
             }
 
-            return fileName;
+            return string.Concat(fileName, ".", fileType);
         }
 
         #endregion
-
+        
         #region Private methods
+        
+        private static string GetFileName(string photoFileName)
+        {
+            var dotIndex = photoFileName.LastIndexOf(".", StringComparison.Ordinal);
+            return photoFileName.Substring(0,dotIndex - 1);
+        }
 
+        private static string GetFileType(string photoFileName)
+        {
+            var dotIndex = photoFileName.LastIndexOf(".", StringComparison.Ordinal);
+            return photoFileName.Substring(dotIndex + 1);
+        }
+
+        private static string GetNextFileNamePartNumber(int number, int digits)
+        {
+            return number.ToString().PadLeft(digits, char.Parse("0"));
+        }
+        
         private static string GetSeparator(string orgSeparator, string[] creationFormats, string fileNamePart, 
             IList<string> orderedFileNameParts, bool firstElementEmpty)
         {
