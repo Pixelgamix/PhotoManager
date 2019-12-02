@@ -7,6 +7,6 @@ namespace PhotoManager.Contracts.Database
         public const string Day = "DAY";
         public const string Time = "TIME";
         public const string OriginFileName = "ORGFN";
-        public const string UploadDate = "UPDATE";
+        public const string UploadDate = "UPLOADDATE";
     }
 }

@@ -32,7 +32,7 @@ namespace PhotoManager.BusinessService
         public string CreateFileName(FileNameSettings fileNameSettings, Photo photo)
         {
             var creationFormats = GetCreationFormat(fileNameSettings);
-            
+
             var fileName = string.Empty;
             foreach (var fileNamePart in fileNameSettings.FileNameOrder)
             {

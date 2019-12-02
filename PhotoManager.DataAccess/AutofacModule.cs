@@ -12,10 +12,10 @@ namespace PhotoManager.DataAccess
                 .As<IDatabaseContext>();
 
             builder.RegisterType<RepositoryContext>()
-                .As<IRepositoryContext>();
+                .AsSelf();
 
             builder.RegisterType<PhotoRepository>()
-                .As<IPhotoRepository>();
+                .AsSelf();
         }
     }
 }

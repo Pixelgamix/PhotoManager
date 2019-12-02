@@ -8,18 +8,6 @@ namespace PhotoManager.Contracts.Database
         
         public bool SeparateTimeFromDate { get; set; }
         
-        public bool IncludesYear { get; set; }
-        
-        public bool IncludesMonth { get; set; }
-        
-        public bool IncludesDay { get; set; }
-        
-        public bool IncludesTime { get; set; }
-        
-        public bool IncludesOriginFileName { get; set; }
-        
-        public bool IncludesUploadDate { get; set; }
-        
         public char Separator { get; set; }
         
         public List<string> FileNameOrder { get; set; }
