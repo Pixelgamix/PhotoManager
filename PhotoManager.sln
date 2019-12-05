@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.BusinessServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.WebApi", "PhotoManager.WebApi\PhotoManager.WebApi.csproj", "{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CBDE036B-2E6D-47C4-B9A6-ADC43591E6AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.BusinessService.Tests", "PhotoManager.BusinessService.Tests\PhotoManager.BusinessService.Tests.csproj", "{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,12 @@ Global
 		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B} = {CBDE036B-2E6D-47C4-B9A6-ADC43591E6AD}
 	EndGlobalSection
 EndGlobal
