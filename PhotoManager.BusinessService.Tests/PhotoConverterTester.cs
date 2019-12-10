@@ -1,11 +1,7 @@
 using System;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
-using Moq;
-using SixLabors.ImageSharp;
 using Xunit;
-using Xunit.Sdk;
 
 namespace PhotoManager.BusinessService.Tests
 {

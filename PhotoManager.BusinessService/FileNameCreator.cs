@@ -29,8 +29,20 @@ namespace PhotoManager.BusinessService
 
         #region Public methods
 
+        /// <summary>
+        /// Creates the filename by which the photo is saved.
+        /// </summary>
+        /// <param name="fileNameSettings"><see cref="FileNameSettings">Settings.</see></param>
+        /// <param name="photo"><see cref="Photo">Photo.</see></param>
+        /// <returns>Filename.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public string CreateFileName(FileNameSettings fileNameSettings, Photo photo)
         {
+            if (fileNameSettings == null) throw new ArgumentNullException(nameof(fileNameSettings));
+            if (photo == null) throw new ArgumentNullException(nameof(photo));
+
+            CheckFileNameFormat(photo.FileName);
+            
             var creationFormats = GetCreationFormat(fileNameSettings);
 
             var fileType = GetFileType(photo.FileName);
@@ -67,10 +79,19 @@ namespace PhotoManager.BusinessService
         
         #region Private methods
         
+        private static void CheckFileNameFormat(string photoFileName)
+        {
+            if (photoFileName == null) throw new ArgumentNullException(nameof(photoFileName));
+            if (photoFileName.Length < 5) throw new WrongFileNameException("Filename must have at least 5 characters.");
+            var dotIndex = photoFileName.LastIndexOf(".", StringComparison.Ordinal);
+            // dotIndex has to be min 3 characters before the end of the filename.
+            if (photoFileName.Length - (dotIndex + 1) < 3) throw new WrongFileNameException("Filetype must have min 3 characters.");
+        }
+        
         private static string GetFileName(string photoFileName)
         {
             var dotIndex = photoFileName.LastIndexOf(".", StringComparison.Ordinal);
-            return photoFileName.Substring(0,dotIndex - 1);
+            return photoFileName.Substring(0,dotIndex);
         }
 
         private static string GetFileType(string photoFileName)
