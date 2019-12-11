@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CBDE036B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.BusinessService.Tests", "PhotoManager.BusinessService.Tests\PhotoManager.BusinessService.Tests.csproj", "{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.DataAccess.Tests", "PhotoManager.DataAccess.Tests\PhotoManager.DataAccess.Tests.csproj", "{D38ADE54-BEDC-42BC-88D0-8385F650ED89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,8 +40,13 @@ Global
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B} = {CBDE036B-2E6D-47C4-B9A6-ADC43591E6AD}
+		{D38ADE54-BEDC-42BC-88D0-8385F650ED89} = {CBDE036B-2E6D-47C4-B9A6-ADC43591E6AD}
 	EndGlobalSection
 EndGlobal
