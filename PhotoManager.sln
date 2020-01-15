@@ -1,52 +1,82 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.Contracts", "PhotoManager.Contracts\PhotoManager.Contracts.csproj", "{E1D2CD1B-B874-42D1-B49B-FFB151243493}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoManager.Contracts", "PhotoManager.Contracts\PhotoManager.Contracts.csproj", "{E1D2CD1B-B874-42D1-B49B-FFB151243493}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.DataAccess", "PhotoManager.DataAccess\PhotoManager.DataAccess.csproj", "{04D647CB-2363-423C-939C-2727C5188DFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoManager.DataAccess", "PhotoManager.DataAccess\PhotoManager.DataAccess.csproj", "{04D647CB-2363-423C-939C-2727C5188DFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.BusinessService", "PhotoManager.BusinessService\PhotoManager.BusinessService.csproj", "{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoManager.BusinessService", "PhotoManager.BusinessService\PhotoManager.BusinessService.csproj", "{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.WebApi", "PhotoManager.WebApi\PhotoManager.WebApi.csproj", "{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoManager.WebApi", "PhotoManager.WebApi\PhotoManager.WebApi.csproj", "{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{CBDE036B-2E6D-47C4-B9A6-ADC43591E6AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.BusinessService.Tests", "PhotoManager.BusinessService.Tests\PhotoManager.BusinessService.Tests.csproj", "{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoManager.BusinessService.Tests", "PhotoManager.BusinessService.Tests\PhotoManager.BusinessService.Tests.csproj", "{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoManager.DataAccess.Tests", "PhotoManager.DataAccess.Tests\PhotoManager.DataAccess.Tests.csproj", "{D38ADE54-BEDC-42BC-88D0-8385F650ED89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoManager.DataAccess.Tests", "PhotoManager.DataAccess.Tests\PhotoManager.DataAccess.Tests.csproj", "{D38ADE54-BEDC-42BC-88D0-8385F650ED89}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F448217C-48B3-48EF-90FA-D1180C89053C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1D2CD1B-B874-42D1-B49B-FFB151243493}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04D647CB-2363-423C-939C-2727C5188DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04D647CB-2363-423C-939C-2727C5188DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D647CB-2363-423C-939C-2727C5188DFA}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D647CB-2363-423C-939C-2727C5188DFA}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{04D647CB-2363-423C-939C-2727C5188DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04D647CB-2363-423C-939C-2727C5188DFA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E7DB5FF-7DAE-4B79-BEAA-2338D7DADD60}.Release|Any CPU.Build.0 = Release|Any CPU
 		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{730A50A1-2CE3-49D3-BBCA-7B63507BD26F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F448217C-48B3-48EF-90FA-D1180C89053C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F448217C-48B3-48EF-90FA-D1180C89053C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F448217C-48B3-48EF-90FA-D1180C89053C}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{F448217C-48B3-48EF-90FA-D1180C89053C}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{F448217C-48B3-48EF-90FA-D1180C89053C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F448217C-48B3-48EF-90FA-D1180C89053C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F3CFA373-3ABE-4494-A1A5-F4BD58AFFC2B} = {CBDE036B-2E6D-47C4-B9A6-ADC43591E6AD}
 		{D38ADE54-BEDC-42BC-88D0-8385F650ED89} = {CBDE036B-2E6D-47C4-B9A6-ADC43591E6AD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8111B16-E5EC-4223-A727-E4C56024AF75}
 	EndGlobalSection
 EndGlobal
