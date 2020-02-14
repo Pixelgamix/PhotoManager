@@ -21,6 +21,7 @@
 
     <ItemGroup>
       <None Remove="2019314_050443_IMG_050443119.jpg" />
+      <None Remove="..\.dockerignore" />
     </ItemGroup>
 
 </Project>
