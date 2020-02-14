@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoManager.BusinessServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoManager.DataAccess.Tests", "PhotoManager.DataAccess.Tests\PhotoManager.DataAccess.Tests.csproj", "{D38ADE54-BEDC-42BC-88D0-8385F650ED89}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F448217C-48B3-48EF-90FA-D1180C89053C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,12 +60,6 @@ Global
 		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Development|Any CPU.Build.0 = Debug|Any CPU
 		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D38ADE54-BEDC-42BC-88D0-8385F650ED89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F448217C-48B3-48EF-90FA-D1180C89053C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F448217C-48B3-48EF-90FA-D1180C89053C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F448217C-48B3-48EF-90FA-D1180C89053C}.Development|Any CPU.ActiveCfg = Debug|Any CPU
-		{F448217C-48B3-48EF-90FA-D1180C89053C}.Development|Any CPU.Build.0 = Debug|Any CPU
-		{F448217C-48B3-48EF-90FA-D1180C89053C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F448217C-48B3-48EF-90FA-D1180C89053C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

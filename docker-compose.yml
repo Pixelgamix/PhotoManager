@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  photomanager.webapi:
-    image: ${DOCKER_REGISTRY-}photomanagerwebapi
-    build:
-      context: .
-      dockerfile: PhotoManager.WebApi/Dockerfile
