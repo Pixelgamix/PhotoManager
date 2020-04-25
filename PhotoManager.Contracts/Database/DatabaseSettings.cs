@@ -18,6 +18,6 @@ namespace PhotoManager.Contracts.Database
         /// <summary>
         /// Format for the directory-structure.
         /// </summary>
-        public virtual string DirectoryFormat { get; set; }
+        public virtual DirectorySettings DirectoryFormat { get; set; }
     }
 }

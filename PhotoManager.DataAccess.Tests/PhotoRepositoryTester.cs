@@ -14,12 +14,13 @@ namespace PhotoManager.DataAccess.Tests
     {
         private readonly PhotoRepository _photoRepository;
         private Mock<IFileNameCreator> _fileNameCreatorMock;
+        private Mock<IPathCreator> _pathCreatorMock;
         private Mock<DatabaseSettings> _databaseSettingsMock;
         
         public PhotoRepositoryTester()
         {
             CreateMocks();
-            _photoRepository = new PhotoRepository(_databaseSettingsMock.Object, _fileNameCreatorMock.Object);
+            _photoRepository = new PhotoRepository(_databaseSettingsMock.Object, _fileNameCreatorMock.Object, _pathCreatorMock.Object);
         }
 
         private void CreateMocks()

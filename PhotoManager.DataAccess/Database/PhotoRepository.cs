@@ -14,15 +14,17 @@ namespace PhotoManager.DataAccess.Database
 
         private readonly DatabaseSettings _databaseSettings;
         private readonly IFileNameCreator _fileNameCreator;
+        private readonly IPathCreator _pathCreator;
 
         #endregion
 
         #region Constructors
 
-        public PhotoRepository(DatabaseSettings databaseSettings, IFileNameCreator fileNameCreator)
+        public PhotoRepository(DatabaseSettings databaseSettings, IFileNameCreator fileNameCreator, IPathCreator pathCreator)
         {
             _databaseSettings = databaseSettings ?? throw new ArgumentNullException(nameof(databaseSettings));
             _fileNameCreator = fileNameCreator ?? throw new ArgumentNullException(nameof(fileNameCreator));
+            _pathCreator = pathCreator ?? throw new ArgumentNullException(nameof(pathCreator));
         }
 
         #endregion
@@ -33,8 +35,9 @@ namespace PhotoManager.DataAccess.Database
         {
             if (photo == null) throw new ArgumentNullException(nameof(photo));
 
+            var path = _pathCreator.CreatePath(_databaseSettings.DirectoryFormat, photo);
             var fileName = _fileNameCreator.CreateFileName(_databaseSettings.FileNameSettings, photo);
-            return WriteContent(_databaseSettings.StoragePath, fileName, photo.Content);
+            return WriteContent(Path.Combine(_databaseSettings.StoragePath, path), fileName, photo.Content);
         }
 
         #endregion
@@ -47,7 +50,10 @@ namespace PhotoManager.DataAccess.Database
             if (fileName == null) throw new ArgumentNullException(nameof(fileName));
             if (content == null) throw new ArgumentNullException(nameof(content));
 
-            var path = Path.Combine(_databaseSettings.StoragePath, fileName);
+            if (!Directory.Exists(storagePath))
+                Directory.CreateDirectory(storagePath);
+
+            var path = Path.Combine(storagePath, fileName);
             
             return File.WriteAllBytesAsync(path, content);
         }
