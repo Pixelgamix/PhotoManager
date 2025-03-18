@@ -1,11 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using MetadataExtractor;
+using MetadataExtractor.Formats.Exif;
 using PhotoManager.Contracts.Entities;
 using PhotoManager.Contracts.Logic;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Metadata.Profiles.Exif;
+
 
 namespace PhotoManager.BusinessService
 {
@@ -54,13 +57,11 @@ namespace PhotoManager.BusinessService
         /// <returns>Creation date.</returns>
         private static DateTime GetCreationDate(Stream stream, DateTime creationDate)
         {
-            var fileInfo = Image.Identify(stream);
-            
-            ExifValue creationDateValue = null;
-            fileInfo.Metadata?.ExifProfile?.TryGetValue(ExifTag.DateTimeOriginal, out creationDateValue);
-            if (creationDateValue != null)
-                return DateTime.ParseExact(creationDateValue.ToString(), "yyyy:MM:dd HH:mm:ss", 
-                    CultureInfo.CurrentCulture);
+            IEnumerable<MetadataExtractor.Directory> directories = ImageMetadataReader.ReadMetadata(stream);
+            var subIfdDirectory = directories.OfType<ExifSubIfdDirectory>().FirstOrDefault();
+            var dateTime = subIfdDirectory?.GetDescription(ExifDirectoryBase.TagDateTimeOriginal);
+            if (dateTime != null)
+                return DateTime.ParseExact(dateTime.ToString(), "yyyy:MM:dd HH:mm:ss", CultureInfo.CurrentCulture);
 
             return creationDate;
         }
@@ -72,11 +73,12 @@ namespace PhotoManager.BusinessService
         /// <exception cref="WrongFileTypeException"></exception>
         private static void CheckFileType(byte[] bytes)
         {
-            var imgFormat = Image.DetectFormat(bytes);
             
-            // null = no image!
-            if (imgFormat == null)
-                throw new WrongFileTypeException("wrong file type");
+            //var imgFormat = Image.DetectFormat(bytes);
+            
+            //// null = no image!
+            //if (imgFormat == null)
+            //    throw new WrongFileTypeException("wrong file type");
         }
 
         #endregion
